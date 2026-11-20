@@ -1,0 +1,10 @@
+{
+  "name": "f1-ratings-engine",
+  "version": "1.0.0",
+  "description": "Autonomous Formula 1 mathematical crew rating engine (Quali vs Ideal Lap + Dynamic Race Weights 2A + Pace Multiplier 3A) with GitHub Actions weekly sync.",
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-f1-seasons.mjs --years=2024,2025",
+    "sync:5seasons": "node scripts/sync-f1-seasons.mjs --years=2022,2023,2024,2025,2026"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "pipeline": "F1-APEX-Hybrid-Variant-3",
+  "algorithms": [
+    "S_quali_FrictionCircle",
+    "S_clean_DynamicFuelTyre",
+    "Variant_2A_DynamicWeights",
+    "Variant_3A_K_pace"
+  ],
+  "lastSyncIso": "2026-11-20T16:35:21.214Z",
+  "seasons": [
+    {
+      "year": 2024,
+      "roundsCount": 24,
+      "updatedAt": "2026-11-20T16:35:13.185Z"
+    },
+    {
+      "year": 2025,
+      "roundsCount": 24,
+      "updatedAt": "2026-11-20T16:35:21.175Z"
+    }
+  ]
+}

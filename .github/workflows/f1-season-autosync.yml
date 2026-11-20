@@ -1,0 +1,44 @@
+name: F1 Season Data Auto-Sync (Variant 3 Hybrid Pipeline)
+
+on:
+  schedule:
+    # Автоматический запуск каждый понедельник в 06:00 UTC после Гран-при
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      years:
+        description: 'Список сезонов через запятую (например: 2022,2023,2024,2025,2026)'
+        required: false
+        default: '2022,2023,2024,2025,2026'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-f1-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run F1 Season Auto-Sync & Mathematical Rating Calculator
+        run: |
+          YEARS="${{ github.event.inputs.years || '2022,2023,2024,2025,2026' }}"
+          node scripts/sync-f1-seasons.mjs --years="$YEARS"
+
+      - name: Commit and push updated season archives if new GPs finished
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/seasons/
+          if git diff --staged --quiet; then
+            echo "Новых завершённых Гран-при не обнаружено."
+          else
+            git commit -m "chore(data): auto-sync F1 season results and calculate crew ratings (2A/3A)"
+            git push
+          fi
