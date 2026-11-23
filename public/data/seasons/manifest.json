@@ -6,32 +6,6 @@
     "Variant_2A_DynamicWeights",
     "Variant_3A_K_pace"
   ],
-  "lastSyncIso": "2026-11-20T18:00:10.082Z",
-  "seasons": [
-    {
-      "year": 2022,
-      "roundsCount": 22,
-      "updatedAt": "2026-11-20T17:59:30.690Z"
-    },
-    {
-      "year": 2023,
-      "roundsCount": 22,
-      "updatedAt": "2026-11-20T17:59:39.300Z"
-    },
-    {
-      "year": 2024,
-      "roundsCount": 24,
-      "updatedAt": "2026-11-20T17:59:48.131Z"
-    },
-    {
-      "year": 2025,
-      "roundsCount": 24,
-      "updatedAt": "2026-11-20T17:59:57.028Z"
-    },
-    {
-      "year": 2026,
-      "roundsCount": 20,
-      "updatedAt": "2026-11-20T18:00:10.074Z"
-    }
-  ]
+  "lastSyncIso": "2026-11-23T17:43:44.795Z",
+  "seasons": []
 }
